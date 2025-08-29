@@ -26,13 +26,12 @@
 
   <script type="module">
     // --- IMPORTS (CDN modular SDK)
-    // Thay '9.x.y' bằng version lines Firebase console cho bạn nếu muốn; ví dụ 9.6.1
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.x.y/firebase-app.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
     import {
       getFirestore, collection, addDoc, onSnapshot,
       doc, updateDoc, deleteDoc, serverTimestamp, query, orderBy
-    } from "https://www.gstatic.com/firebasejs/9.x.y/firebase-firestore.js";
-    import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.x.y/firebase-auth.js";
+    } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+    import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
     // --- CONFIG: dán config của bạn copy từ Firebase Console (Your apps -> SDK config)
    const firebaseConfig = {
