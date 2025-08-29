@@ -1858,7 +1858,32 @@ background: rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index
 
 
 
-<script>
+<script type="module">
+
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import {
+      getFirestore, collection, addDoc, onSnapshot,
+      doc, updateDoc, deleteDoc, serverTimestamp, query, orderBy
+    } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+    import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+ const firebaseConfig = {
+  apiKey: "AIzaSyA3Mx6r2xlgmyGlpTJPJ2GF9QjCTiubwGI",
+  authDomain: "greedyking-e9b52.firebaseapp.com",
+  databaseURL: "https://greedyking-e9b52-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "greedyking-e9b52",
+  storageBucket: "greedyking-e9b52.firebasestorage.app",
+  messagingSenderId: "243722854826",
+  appId: "1:243722854826:web:4f69620095fd1fc9934bd3",
+  measurementId: "G-5PMYYPCDC3"
+};
+
+ // --- INIT
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth();
+
+    signInAnonymously(auth).catch(e => console.error("Auth error:", e));
 
 let countdownDuration = 40; // số giây mỗi phiên
 let lastSpinTime = parseInt(localStorage.getItem("lastSpinTime")) || Date.now();
